@@ -24,7 +24,7 @@ class HousesController < ApplicationController
 
   def update
     @house = House.find(params[:id])
-    @house.update(post_params)
+    @house.update(house_params)
     redirect_to house_path(@house)
   end
 

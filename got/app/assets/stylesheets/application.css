@@ -23,8 +23,34 @@
 body {
   display: block;
   text-align: center;
+  font-family: 'Cuprum', sans-serif;
+
 }
 
 #logo {
   height: 150px;
+}
+
+img {
+  height: 400px;
+  margin: 10px;
+}
+
+.housesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.houseInfo {
+  margin: 50px 20%;
+}
+
+textarea {
+  height: 100px;
+  width: 300px;
+}
+
+textfield {
+  width: 300px;
 }

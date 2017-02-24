@@ -1,5 +1,5 @@
 
-
+<div class='houseInfo'>
 <h1> <%= @house.name %></h1>
 
 <p><img src="<%= @house[:family_crest_url] %>"></p>
@@ -9,7 +9,7 @@
 <p><%= @house.history %></p>
 
 <p> <%= link_to "Edit House", edit_house_path(@house) %></p>
-
+</div>
 <hr>
 <h3> House Members </h3>
 

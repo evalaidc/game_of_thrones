@@ -1,7 +1,6 @@
-<h1> Houses </h1>
-
+<div class='housesContainer'>
 <% @houses.each do |house| %>
-<h3> <%= link_to house.name, house_path(house) %></h3>
+<h3> <a href="/houses/<%= house.id %>"><img class="familyCrest" src="<%=house.family_crest_url %>"></a></h3>
 <%end%>
-
+</div>
 <h4> <%= link_to "Create a New House", new_house_path %> </h4>
