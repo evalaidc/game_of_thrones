@@ -15,16 +15,16 @@
  */
 
 
- @font-face {
-   font-family: "thrones";
-   src: font-url('game_of_thrones.ttf') format("truetype");
- }
 
 body {
   display: block;
   text-align: center;
   font-family: 'Cuprum', sans-serif;
-
+  background-image: url(https://images.alphacoders.com/226/226091.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #logo {
@@ -53,4 +53,24 @@ textarea {
 
 textfield {
   width: 300px;
+}
+
+.alert{
+  color: red;
+}
+
+a {
+  padding: 5px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.showLink:hover {
+  background-color: rgba(102,102,255,.4);
+  color: #FFFAFA;
+}
+
+nav {
+  padding: 5px 20px;
+  font-size: 20px;
 }

@@ -3,4 +3,5 @@
 <h3> <a href="/houses/<%= house.id %>"><img class="familyCrest" src="<%=house.family_crest_url %>"></a></h3>
 <%end%>
 </div>
-<h4> <%= link_to "Create a New House", new_house_path %> </h4>
+
+<h4> <%= link_to "Create a New House", new_house_path, :class => 'showLink' if current_user %>  </h4>

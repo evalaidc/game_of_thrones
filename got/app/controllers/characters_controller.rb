@@ -1,9 +1,6 @@
 class CharactersController < ApplicationController
 
-  def index
-      @house = House.find(params[:house_id])
-      @characters = Character.all
-    end
+
 
     def show
       @house = House.find(params[:house_id])
@@ -17,7 +14,7 @@ class CharactersController < ApplicationController
 
     def create
       @house = House.find(params[:house_id])
-      @character = @house.characters.create(character_params)
+      @character = @house.characters.create(character_params.merge(user: current_user))
       redirect_to house_path(@house)
     end
 
@@ -29,14 +26,22 @@ class CharactersController < ApplicationController
     def update
       @house = House.find(params[:house_id])
       @character = @house.characters.find(params[:id])
-      @character.update(character_params)
+      if @character.user == current_user
+        @character.update(character_params)
+      else
+        flash[:alert] = "Only the creator can edit #{@character.name}."
+      end
       redirect_to house_path(@house)
     end
 
     def destroy
       @house = House.find(params[:house_id])
       @character = @house.characters.find(params[:id])
-      @character.destroy
+      if @character.user == current_user
+        @character.destroy
+      else
+        flash[:alert] = "Only the creator can get rid of #{character.name}."
+      end
       redirect_to house_path(@house)
     end
 

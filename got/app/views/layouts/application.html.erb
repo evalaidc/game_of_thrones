@@ -10,6 +10,19 @@
 
   <body>
     <a href="/houses"><img id='logo' src="http://cdn.pcwallart.com/images/game-of-thrones-logo-png-wallpaper-4.jpg"></a>
+
+    <nav>
+      <% if !current_user %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'showLink' %>
+        <%= link_to "Sign in", new_user_session_path, :class => 'showLink' %>
+      <% else %>
+        <p> <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'showLink' %>
+         of <%= current_user.email %></p>
+      <% end %>
+    </nav>
+
+    <h2 class="notice"><%= notice %></h2>
+    <h2 class="alert"><%= alert %></h2>
     <%= yield %>
   </body>
 </html>
