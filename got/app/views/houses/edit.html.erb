@@ -1,0 +1,35 @@
+<h3><%= link_to "< Back to Houses", houses_path %></h3>
+
+
+<h1> Edit <%= @house.name %> </h1>
+
+<%= form_for @house, url: "/houses/#{@house.id}" do |f| %>
+  <p>
+    <%= f.label :house_name %><br>
+    <%= f.text_area :name %>
+  </p>
+
+    <p>
+      <%= f.label :family_Crest_Photo_URL %><br>
+      <%= f.text_area :family_crest_url %>
+    </p>
+
+    <p>
+      <%= f.label :realm %><br>
+      <%= f.text_area :realm %>
+    </p>
+
+    <p>
+      <%= f.label :history %><br>
+      <%= f.text_area :history %>
+    </p>
+
+  <p>
+    <%= f.submit "Edit" %>
+  </p>
+  <%end%>
+
+
+  <%= form_for @house, url: "/houses/#{@house.id}", method: :delete do |f| %>
+    <% f.submit "DELETE", class: "btn-delete" %>
+  <% end %>

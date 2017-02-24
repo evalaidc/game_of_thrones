@@ -1,0 +1,21 @@
+
+
+<h1> <%= @house.name %></h1>
+
+<p><img src="<%= @house[:family_crest_url] %>"></p>
+<h3> House Realm </h3>
+<p> <%= @house.realm %></p>
+<h3> House History </h3>
+<p><%= @house.history %></p>
+
+<p> <%= link_to "Edit House", edit_house_path(@house) %></p>
+
+<hr>
+<h3> House Members </h3>
+
+<% @characters.each do |character| %>
+  <h4> <%= link_to character.name, house_character_path(@house,character)%> </h4>
+<%end%>
+<p>
+  <%= link_to "Add House Member", new_house_character_path(@house) %>
+</p>

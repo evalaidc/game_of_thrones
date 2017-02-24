@@ -1,0 +1,6 @@
+
+<h3><%= @character.name %></h3>
+
+<p> <img src="<%= @character[:photo_url] %>"></p>
+<p> <%= @character.bio %> </p>
+<p><%= link_to "Edit character", edit_house_character_path(@house, @character) %></p>

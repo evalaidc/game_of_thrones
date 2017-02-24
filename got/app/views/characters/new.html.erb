@@ -1,0 +1,23 @@
+<h2> New House Member </h2>
+
+<%= form_for [@house,@character]  do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :photo_url %><br>
+    <%=  f.text_area :photo_url %>
+  </p>
+
+  <p>
+    <%= f.label :bio %><br>
+    <%=  f.text_area :bio %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+  <%end%>
